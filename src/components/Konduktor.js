@@ -8,7 +8,8 @@ import React, { Component } from 'react'
          this.state = {
              name: '',
              type: '',
-             cointainerimage: ''
+             cointainerimage: '',
+             metadata: ''
          }
      }
      handleNamechange = (event) => {
@@ -26,6 +27,14 @@ import React, { Component } from 'react'
             cointainerimage: event.target.value
         })
     }
+    handlemetadatachange = (event) => {
+        this.setState({
+            metadata: event.target.value
+        }
+
+        )
+    }
+
     render() {
         return (
             <form>
@@ -48,6 +57,13 @@ import React, { Component } from 'react'
                 <input type='text' 
                 value={this.state.cointainerimage} 
                 onChange={this.handlecointainerImagechange}
+                />
+            </div>
+            <div>
+                <label>Metadata: </label>
+                <input type='text'
+                value={this.state.metadata}
+                onChange={this.handlemetadatachange}
                 />
             </div>
             </form>
