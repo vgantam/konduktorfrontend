@@ -11,7 +11,8 @@ import React, { Component } from 'react'
              cointainerimage: '',
              metadata: '',
              networkingprotocal:'',
-             portnumber:''
+             portnumber:'',
+             cpusize:''
          }
      }
      handleNamechange = (event) => {
@@ -32,9 +33,7 @@ import React, { Component } from 'react'
     handlemetadatachange = (event) => {
         this.setState({
             metadata: event.target.value
-        }
-
-        )
+        })
     }
     handleProtocalChange = (event) =>{
         this.setState({
@@ -47,6 +46,12 @@ import React, { Component } from 'react'
             portnumber: event.target.value  
         })
     }
+    handlecpusize = (event) => {
+        this.setState({
+            cpusize:event.target.value
+        })
+    }
+    
 
     render() {
         return (
@@ -61,7 +66,7 @@ import React, { Component } from 'react'
             <div>
                 <label>Type: </label>
                 <select value={this.state.topic} onChange={this.handleTypeChange}>
-                    <option value= "stateless">Stateles  </option>
+                    <option value= "stateless">Stateless  </option>
                     <option  value= "statefull">Statefull </option>
                 </select>
             </div>
@@ -91,6 +96,14 @@ import React, { Component } from 'react'
                 value={this.state.portnumber}
                 onChange={this.handlePortNumberchange}
                 />
+            </div>
+            <div>
+                <label>Cpu Profile: </label>
+                <select value={this.state.cpusize} onChange={this.handlecpusize}>
+                    <option value= "Small"> Small</option>
+                    <option value= "Medium"> Medium</option>
+                    <option value= "Large"> Large</option>
+                </select>
             </div>
             </div>
             </form>
