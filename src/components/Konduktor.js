@@ -9,7 +9,9 @@ import React, { Component } from 'react'
              name: '',
              type: '',
              cointainerimage: '',
-             metadata: ''
+             metadata: '',
+             networkingprotocal:'',
+             portnumber:''
          }
      }
      handleNamechange = (event) => {
@@ -33,6 +35,17 @@ import React, { Component } from 'react'
         }
 
         )
+    }
+    handleProtocalChange = (event) =>{
+        this.setState({
+            networkingprotocal:event.target.value
+            
+        })
+    }
+    handlePortNumberchange = (event) => {
+        this.setState({
+            portnumber: event.target.value  
+        })
     }
 
     render() {
@@ -65,6 +78,20 @@ import React, { Component } from 'react'
                 value={this.state.metadata}
                 onChange={this.handlemetadatachange}
                 />
+            <div>
+                <label>NetworkingProtocal: </label>
+                <select value={this.state.networkingprotocal} onChange={this.handleProtocalChange}>
+                    <option value= "tcp">TCP  </option>
+                    <option  value= "udp">UDP </option>
+                </select>
+            </div>
+            <div>
+                <label>Port: </label>
+                <input type='text'
+                value={this.state.portnumber}
+                onChange={this.handlePortNumberchange}
+                />
+            </div>
             </div>
             </form>
         )
