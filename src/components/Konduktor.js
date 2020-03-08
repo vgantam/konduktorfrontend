@@ -51,6 +51,16 @@ import React, { Component } from 'react'
             cpusize:event.target.value
         })
     }
+    handlechoosememory = (event) => {
+        this.setState({
+            choosememory:event.target.value
+        })
+    }
+        handlememorysizechange = (event) => {
+            this.setState({
+                memorysize:event.target.value
+            })
+    }
     
 
     render() {
@@ -104,6 +114,20 @@ import React, { Component } from 'react'
                     <option value= "Medium"> Medium</option>
                     <option value= "Large"> Large</option>
                 </select>
+            </div>
+            <div>
+                <label>Choose Memory: </label>
+                <select>value={this.state.choosememory} onChange={this.handlechoosememory}>
+                <option value= "Megabytes">Megabytes</option>
+                <option value= "Gigabytes">Gigabytes</option>
+                </select>
+            </div>
+            <div>
+                <label>Memory Size: </label>
+                <input type='text'
+                value={this.state.memorysize}
+                onChange={this.handlememorysizechange}
+                />
             </div>
             </div>
             </form>
