@@ -6,6 +6,7 @@ import  Konduktor from './components/Konduktor'
 function App() {
   return (
     <div className="App">
+      <h1>Konduktor Pipeline Configuration</h1>
       <Konduktor/>
     </div>
   );
